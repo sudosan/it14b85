@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伊吹翼14歳でB85</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="conic-gradient.js"></script>
+    <style>
+        html,body{
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            overflow: hidden;
+        }
+        #back{
+            overflow: hidden;
+            position: fixed;
+            width: 200vw;
+            height: 200vw;
+            left: calc(50% - 100vw);
+            top: calc(50% - 100vw);
+            background: rgb(255, 251, 0) repeating-conic-gradient(rgb(255, 45, 45) 0, rgb(255, 45, 45) 15deg, transparent 0, transparent 30deg);
+            animation: rotate-anime 10s linear infinite;
+        }
+        #text{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        #text span{
+            margin: 0 -7vw 0 -3vw;
+        }
+        #text span::selection{
+            background-color: transparent;
+        }
+        #text h1{
+            text-align: center;
+            font-family: a-otf-midashi-mi-ma31-pr6n, serif;
+            font-weight: 500;
+            font-style: italic;
+            color:black;
+            text-shadow: 2px 2px 1px #fff,-2px 2px 1px #fff,2px -2px 1px #fff,-2px -2px 1px #fff;
+            font-size: 8.9vw;
+            margin:0;
+            transition: font-size ease .1s;
+            cursor: pointer;
+            padding-right: 2vw;
+        }
+        #text h1:hover{
+            font-size: 9.4vw; 
+        }
+        #text h1::selection{
+            background-color: transparent;
+        }
+        footer{
+            position:fixed;
+            bottom: 0;
+            width: 100vw;
+        }
+        footer p,footer a{
+            text-align: center;
+            color:rgba(128,128,128,0.5);
+            margin:0;
+        }
+        #tweetButton{
+            text-align: center;
+        }
+        #tweetButton button{
+            display: inline;
+            width: 80px;
+            height: 30px;;
+            font-size:12px;
+            color:white;
+            background-color: rgba(35, 129, 206, 0.7);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #tweetButton a,#tweetButton p{
+            text-decoration: none;
+            display: inline;
+        }
+        @keyframes rotate-anime {
+            0%  {transform: rotate(0);}
+            100%  {transform: rotate(360deg);}
+        }
+        @media screen and (orientation:portrait) {
+            #back {
+                width: 200vh;
+                height: 200vh;
+                left: calc(50% - 100vh);
+                top: calc(50% - 100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="back"></div>
+    <div id="text"><h1>伊吹翼<span> 、</span>14歳でB85!?</h1></div>
+    <footer>
+        <p>翼ちゃんのシルエットとか載せたいな・・・</p>
+        <div id="tweetButton">
+            <a href="https://twitter.com/intent/tweet?text=%e4%bc%8a%e5%90%b9%e7%bf%bc14%e6%ad%b3%e3%81%a7B85&url=https%3a%2f%2fit14b85%2ecom&hashtags=IT14B85" target="_blank"><button>ツイート</button></a>
+            <p><a href="https://twitter.com/sudosan" target="_blank">@sudosan</a></p>
+        </div>
+    </footer>
+</body>
+<script>
+(function(d) {
+    var config = {
+    kitId: 'zid4dlm',
+    scriptTimeout: 3000,
+    async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+})(document);
+let a=false;
+document.querySelector("#text > h1").addEventListener("click",function(){
+    if(a){
+        this.style.color="#000";
+        this.style.textShadow="2px 2px 1px #fff,-2px 2px 1px #fff,2px -2px 1px #fff,-2px -2px 1px #fff";
+        a=false;
+    }
+    else{
+        this.style.color="#fff";
+        this.style.textShadow="2px 2px 1px #000,-2px 2px 1px #000,2px -2px 1px #000,-2px -2px 1px #000";
+        a=true;
+    }
+    if(Math.round(Math.random())){
+        this.style.fontFamily="a-otf-midashi-mi-ma31-pr6n, serif";
+    }
+    else{
+        this.style.fontFamily="vdl-gigamaru, sans-serif";
+    }
+},false);
+//safariバグ対策
+const userAgent = window.navigator.userAgent.toLowerCase();
+
+if(userAgent.indexOf('iphone') != -1||userAgent.indexOf('ipad') != -1){
+    window.addEventListener("load",function(){
+        setTimeout(function(){
+            document.getElementById("back").style.background="rgb(255, 251, 0)";
+            setTimeout(function(){document.getElementById("back").style.background="";},1000);
+        },1000);
+    },false);
+}
+</script>
+</html>
